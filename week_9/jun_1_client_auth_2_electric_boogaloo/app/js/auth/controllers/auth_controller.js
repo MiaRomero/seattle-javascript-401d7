@@ -4,6 +4,10 @@ module.exports = function(app) {
     this.errors = [];
     this.getUsername = function() {
       // AUTH_EXP: What happens when this function is called?
+      //
+      // We are utilizing the promise returned from the auth_service to set
+      // this.username to the currentUser.
+      //
       auth.getUsername()
         .then((currentUser) => {
           this.username = currentUser;
